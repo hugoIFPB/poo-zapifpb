@@ -2,7 +2,7 @@
 public class Main {
 
 	public static void main(String[] args) {
-		ZapIFPBFacade zap = new ZapIFPB();
+		ZapIFPBFacade zap = new ZapIFPBImpl();
 		zap.cadastrarUsuario("fulano", "123");
 		zap.cadastrarUsuario("sicrano", "123");
 		zap.cadastrarUsuario("beltrano", "123");
