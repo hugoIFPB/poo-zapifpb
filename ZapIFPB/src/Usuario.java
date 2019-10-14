@@ -14,6 +14,15 @@ public class Usuario {
 		return this.senha.equals(senha);
 	}
 	
+	public boolean mudarSenha(String senhaAntiga, String nova) {
+		if(validaSenha(senhaAntiga) ) {
+			this.senha= nova;
+			return true;
+		}
+		return false;
+	}
+	
+	
 	public String getNomeUsuario() {
 		return nomeUsuario;
 	}

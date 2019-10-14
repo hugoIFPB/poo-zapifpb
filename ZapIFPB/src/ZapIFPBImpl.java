@@ -5,6 +5,7 @@ import java.util.Set;
 public class ZapIFPBImpl implements ZapIFPBFacade{
 
 	private Set<Usuario> contatos;
+	private Usuario autenticado;
 	
 	public ZapIFPBImpl() {
 		contatos = new HashSet<Usuario>();
@@ -19,7 +20,9 @@ public class ZapIFPBImpl implements ZapIFPBFacade{
 	@Override
 	public boolean autenticar(String nomeUsuario, String senha) {
 		for (Usuario usuario : contatos) {
-			if(usuario.getNomeUsuario().equals(nomeUsuario) && usuario.validaSenha(senha)) {
+			if(usuario.getNomeUsuario().equals(nomeUsuario) 
+					&& usuario.validaSenha(senha)) {
+				autenticado = usuario;
 				return true;
 			}
 		}
